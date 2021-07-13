@@ -1,0 +1,17 @@
+#mapping the growth of money over time given a certian interest rate
+capital = 100000
+interest_rate = 0.1
+time = list(range(0, 100))
+#if you have a job, you will save 10% of your annual income. This will be contributed to your investments. We assume that each year, you get a 3% raise to keep up with inflation.
+income = 100000
+income_raise = 0.03
+savings_rate = 0.1
+#now finding how many years it takes to reach $1m    
+for y in time:
+    savings = income * savings_rate
+    capital = (capital+ savings) + (capital+savings) * interest_rate
+    income = income + income*income_raise
+    if capital > 1000000:
+        break
+  
+print("it takes", y, "years to reach $1m")
